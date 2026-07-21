@@ -257,7 +257,12 @@ const ensureDirectoryExists = async (path) => {
   
   try {
     // 检查目录是否存在
-    const response = await fetch(`${githubApiUrl}/repos/${username.value}/${repoName.value}/contents/${dirPath}?ref=${branch.value}`, {
+    const origin = window.location.origin
+    // 原始github接口路径，不要带域名
+    const githubPath = `${githubApiUrl}/repos/${username.value}/${repoName.value}/contents/${dirPath}?ref=${branch.value}`
+    const proxyUrl = `${origin}/api/github-proxy?target=${encodeURIComponent(githubPath)}`
+
+    const response = await fetch(proxyUrl, {
       method: 'GET',
       headers: {
         'Authorization': `token ${githubToken.value}`,
