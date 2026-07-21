@@ -260,9 +260,9 @@ const ensureDirectoryExists = async (path) => {
     const origin = window.location.origin
     // 原始github接口路径，不要带域名
     const githubPath = `${githubApiUrl}/repos/${username.value}/${repoName.value}/contents/${dirPath}?ref=${branch.value}`
-    const proxyUrl = `${origin}/api/github-proxy?target=${encodeURIComponent(githubPath)}`
+    //const proxyUrl = `${origin}/api/github-proxy?target=${encodeURIComponent(githubPath)}`
 
-    const response = await fetch(proxyUrl, {
+    const response = await fetch(githubPath, {
       method: 'GET',
       headers: {
         'Authorization': `token ${githubToken.value}`,
