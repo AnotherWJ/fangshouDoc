@@ -73,7 +73,7 @@ async function customUpload(file, callback) {
 const isPasswordVerified = ref(false)
 const password = ref('')
 const passwordError = ref(false)
-const correctPassword = '123456' // 设置正确的密码
+const correctPassword = '6' // 设置正确的密码
 
 // GitHub认证相关状态
 const githubToken = ref(defaultGithubToken)
@@ -372,7 +372,7 @@ const handleSave = async () => {
     <div v-if="!isPasswordVerified" class="password-layer">
       <div class="password-container">
         <h2>访问受限</h2>
-        <p>请输入密码[123456]</p>
+        <p>请输入密码</p>
         <div class="password-input-container">
           <input 
             type="password" 
