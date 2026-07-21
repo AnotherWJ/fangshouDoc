@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'VitePress Online Editor',
   description: '在线 Markdown 编辑器',
-  base: '/vitepress-online-editor/', // 设置为您的仓库名称
+  base: '/fangshouDoc/', // 设置为您的仓库名称
   lang: 'zh-CN',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
@@ -26,7 +26,7 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/cubeyu/vitepress-online-editor' }
+      { icon: 'github', link: 'https://github.com/AnotherWJ/fangshouDoc' }
     ],
     footer: {
       message: '基于 MIT 许可发布',
